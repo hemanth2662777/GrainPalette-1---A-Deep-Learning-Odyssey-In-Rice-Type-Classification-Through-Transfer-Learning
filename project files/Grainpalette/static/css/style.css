@@ -1,0 +1,75 @@
+body.bg {
+    background-image: url("/static/background.jpg");  /* make sure this is the correct image path */
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.upload-box, .form-container {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    margin: 50px auto;
+    width: 400px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+input, button {
+    padding: 10px;
+    margin-top: 10px;
+    width: 90%;
+    border-radius: 5px;
+    border: none;
+}
+
+button {
+    background-color: #a47148;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+body.login-bg {
+    background-image: url("/static/login_bg.jpg");
+    background-size: cover 100% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+.prediction-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;  /* center horizontally */
+    gap: 30px;                /* space between image and prediction box */
+    margin-top: 20px;
+    flex-wrap: wrap;          /* wrap on small screens */
+}
+
+.predicted-img {
+    width: 300px;
+    border-radius: 10px;
+}
+
+.prediction-box {
+    background-color: rgba(161, 122, 91, 0.85);
+    color: white;
+    padding: 20px;
+    width: 300px;
+    border-radius: 15px;
+    font-size: 18px;
+    text-align: left;
+}

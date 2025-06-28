@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GrainPalette - A Deep Learning Odyssey In Rice Type Classification Through Transfer Learning</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: url("/static/background.jpg") no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+
+        /* Navbar */
+        nav {
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: flex-start;
+            padding: 15px 30px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 25px;
+        }
+
+        /* Left-aligned container */
+        .container {
+            padding: 30px;
+            width: 100%;
+            max-width: 700px;
+        }
+
+        /* Title */
+        h1.title {
+            font-size: 32px;
+            font-weight: bold;
+            text-shadow: 2px 2px #000;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        /* Upload box */
+        .upload-box {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        input[type="file"] {
+            background-color: #a17a5b;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button {
+            background-color: #a17a5b;
+            color: white;
+            padding: 10px 25px;
+            font-size: 16px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Prediction display */
+        .progress-bar {
+            height: 6px;
+            background-color: limegreen;
+            width: 300px;
+            margin: 10px 0;
+            border-radius: 3px;
+        }
+
+        .prediction-box {
+            background-color: rgba(161, 122, 91, 0.85);
+            color: white;
+            margin: 20px 0;
+            padding: 20px;
+            width: 300px;
+            border-radius: 15px;
+            font-size: 18px;
+            text-align: left;
+        }
+
+        /* Info sections */
+        .info-section {
+            display: none;
+            background: rgba(255, 255, 255, 0.85);
+            color: black;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 600px;
+            text-align: left;
+        }
+    </style>
+    <script>
+        function showSection(sectionId) {
+            document.getElementById('about-section').style.display = 'none';
+            document.getElementById('contact-section').style.display = 'none';
+            document.getElementById(sectionId).style.display = 'block';
+        }
+    </script>
+</head>
+<body class="bg">
+    <!-- Navigation -->
+    <nav>
+        <a href="/home">HOME</a>
+        <a href="javascript:void(0);" onclick="showSection('about-section')">ABOUT US</a>
+        <a href="javascript:void(0);" onclick="showSection('contact-section')">CONTACT US</a>
+        <a href="/logout">LOGOUT</a>
+    </nav>
+
+    <!-- Left-aligned Content -->
+    <div class="container">
+        <!-- Title -->
+        <h1 class="title">
+            GrainPalette - A Deep Learning Odyssey In Rice Type Classification Through Transfer Learning
+        </h1>
+
+        <!-- Upload Box -->
+        <div class="upload-box">
+            <form action="/home" method="post" enctype="multipart/form-data">
+                <label style="font-size: 22px;">Upload file here</label><br>
+                <input type="file" name="file" required><br>
+                <button type="submit">Start Prediction</button>
+            </form>
+
+            {% if prediction %}
+                <div class="progress-bar"></div>
+                <p>🔄 predicting file 100%</p>
+
+                <div class="prediction-container">
+                   <img src="/{{ image_path }}" alt="Image" class="predicted-img">
+                   <div class="prediction-box">
+                      Predicted data: <b>{{ prediction }}</b> <br> ({{ confidence }}%)
+                   </div>
+                </div>
+            {% endif %}
+
+        </div>
+
+        <!-- About Us -->
+        <div id="about-section" class="info-section">
+            <h2>About Us</h2>
+            <p>
+                Welcome to GrainPalette — Your Smart Rice Classification Partner.
+
+                At GrainPalette, we're on a mission to bring artificial intelligence to the heart of agriculture. Our platform uses powerful deep learning models to automatically classify different varieties of rice — including Basmati, Jasmine, Arborio, Ipsala, and Karacadag — with remarkable accuracy and speed.
+            <p>
+                Born from the fusion of agricultural science and modern AI, GrainPalette is designed to help farmers, researchers, exporters, and food industry professionals achieve faster, more reliable grain identification. With an intuitive web interface and a highly trained neural network behind the scenes, we make cutting-edge technology accessible to everyone.
+            </p>
+            <p>
+                KEY FEATURES :-
+            </P>
+            <p>    
+               *🚀 High Accuracy: Built using state-of-the-art CNN architectures like MobileNetV2, fine-tuned for grain recognition.
+            </p>
+            <p>
+               *📷 Real-Time Image Processing: Upload an image and get instant predictions with confidence scores.
+            </p>
+            <p>
+
+               *🧠 Transfer Learning Backbone: Utilizes pre-trained models to enhance learning efficiency and accuracy.
+            </p>
+            <p>
+                *🌐 User-Friendly Web Interface: Designed for ease of use, even for non-technical users.
+            </p>
+            <p>
+                *🔐 Secure Access: Includes user login and registration to ensure data privacy and user management.
+            </p>
+            <p>
+               👉--- This project was developed by Hemanth Chelimala as part of a research initiative focused on artificial intelligence applications in agriculture, aiming to advance smart farming technologies through deep learning.---
+            </p>
+        </div>
+
+        <!-- Contact Us -->
+        <div id="contact-section" class="info-section">
+            <h2>Contact Us</h2>
+            <p>Email:📧 hemanth2662n@gmail.com</p>
+            <p>Phone:📞 +91-7013569762</p>
+            <p>Address:📍 Kadapa,Andhra Pradesh,India</p>
+        </div>
+    </div>
+</body>
+</html>

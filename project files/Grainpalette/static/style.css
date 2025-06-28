@@ -1,0 +1,98 @@
+/* Body & Background */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: url("/static/background.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: flex-start;
+    padding: 15px 30px;
+    font-weight: bold;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 25px;
+}
+
+/* Page Container - aligns all content to the left */
+.container {
+    padding: 30px;
+    max-width: 700px;
+}
+
+/* Title Styling */
+.title {
+    font-size: 32px;
+    font-weight: bold;
+    text-shadow: 2px 2px #000;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+/* Upload Form Area */
+.upload-box {
+    text-align: left;
+    margin-top: 20px;
+}
+
+input[type="file"] {
+    background-color: #a17a5b;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button {
+    background-color: #a17a5b;
+    color: white;
+    padding: 10px 25px;
+    font-size: 16px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Prediction Display */
+.progress-bar {
+    height: 6px;
+    background-color: limegreen;
+    width: 300px;
+    margin: 10px 0;
+    border-radius: 3px;
+}
+
+.prediction-box {
+    background-color: rgba(161, 122, 91, 0.85);
+    color: white;
+    margin: 20px 0;
+    padding: 20px;
+    width: 300px;
+    border-radius: 15px;
+    font-size: 18px;
+    text-align: left;
+}
+
+/* About / Contact Info Sections */
+.info-section {
+    display: none;
+    background: rgba(255, 255, 255, 0.85);
+    color: black;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 600px;
+    text-align: left;
+}
