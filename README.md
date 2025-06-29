@@ -4,7 +4,7 @@
 
 GrainPalette is a deep learning-based web application that classifies rice grain images into various types using transfer learning. It features a clean UI, login/register system, and a backend powered by Flask and TensorFlow.
 
----
+---project demo video :- https://drive.google.com/file/d/11xSmHQtan2UUARcLrsNOFRc3fj1OzTSv/view?usp=drive_link
 
 ## 🚀 Features
 
