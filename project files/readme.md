@@ -17,7 +17,7 @@ GrainPalette is a deep learning-based web application that classifies rice grain
 
 ## 🗂️ Project file download and extract process
 
----
+---github link : - https://github.com/hemanth2662777/GrainPalette-1---A-Deep-Learning-Odyssey-In-Rice-Type-Classification-Through-Transfer-Learning
 
 ## 📦 Download & Extract
 
