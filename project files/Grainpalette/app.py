@@ -6,14 +6,24 @@ import os
 import json
 
 app = Flask(__name__)
-app.secret_key = 'supersecretkey'  # For session management
+app.secret_key = 'supersecretkey'
 
-# Load model and classes
-model = load_model('model/rice_model.h5', compile=False)
+# ===== FIXED MODEL PATH =====
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, "model", "rice_model.h5")
+
+print("Model Path:", MODEL_PATH)
+
+try:
+    model = load_model(MODEL_PATH, compile=False)
+    print("Model loaded successfully")
+except Exception as e:
+    print("Model loading failed:", e)
+    model = None
 class_names = ['arborio', 'basmati', 'ipsala', 'jasmine', 'karacadag']
 
-# User file path
-USERS_FILE = 'users.json'
+# ===== USERS FILE PATH =====
+USERS_FILE = os.path.join(BASE_DIR, "users.json")
 
 # 🔧 Utility: Load users from JSON
 def load_users():
