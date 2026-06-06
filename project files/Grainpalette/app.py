@@ -9,7 +9,7 @@ app = Flask(__name__)
 app.secret_key = 'supersecretkey'  # For session management
 
 # Load model and classes
-model = load_model('model/rice_model.h5', compile=False)
+model = load_model('model/rice_model.keras')
 class_names = ['arborio', 'basmati', 'ipsala', 'jasmine', 'karacadag']
 
 # User file path
