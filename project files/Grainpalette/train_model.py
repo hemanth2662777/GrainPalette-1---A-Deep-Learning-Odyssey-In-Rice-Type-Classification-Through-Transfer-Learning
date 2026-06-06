@@ -46,5 +46,5 @@ model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accur
 model.fit(train_gen, validation_data=val_gen, epochs=EPOCHS)
 
 os.makedirs('model', exist_ok=True)
-model.save('model/rice_model.h5')
+model.save('model/rice_model.keras')
 print("✅ Model saved to model/rice_model.h5")
