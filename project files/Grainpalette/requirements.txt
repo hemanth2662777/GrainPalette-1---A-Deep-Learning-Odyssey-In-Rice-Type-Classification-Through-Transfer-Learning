@@ -3,4 +3,3 @@ gunicorn
 tensorflow
 numpy
 Pillow
-Update requirements.txt
